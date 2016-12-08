@@ -27,7 +27,7 @@
   <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
       var table = $('#dt_110x').DataTable({
-        "processing": true,
+        "processing": false,
         "serverSide": true,
         "ajax": "{{ request.route_path('data_yadcf') }}"
       });
@@ -40,7 +40,7 @@
         filter_type: "select"
       }, {
         column_number: 2,
-        filter_type: "auto_complete",
+        filter_type: "auto_complete"
       }, {
         column_number: 3,
         filter_type: "range_date",
