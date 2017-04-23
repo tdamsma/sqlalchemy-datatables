@@ -1,5 +1,4 @@
 """Flask tutorial views."""
-from string import upper
 from flask import Flask, render_template, request, jsonify
 
 from datatables import ColumnDT, DataTables
@@ -39,7 +38,10 @@ def data():
     ]
 
     # defining the initial query depending on your purpose
-    query = db.session.query().select_from(User).join(Address).filter(Address.id > 14)
+    query = db.session.query().\
+        select_from(User).\
+        join(Address).\
+        filter(Address.id > 14)
 
     # GET parameters
     params = request.args.to_dict()
