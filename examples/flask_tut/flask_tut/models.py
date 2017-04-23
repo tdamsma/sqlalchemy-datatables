@@ -3,11 +3,8 @@
 Basic example: a User has one or many Addresses.
 """
 import datetime
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config.from_pyfile('../app.cfg')
+from flask_tut import app
 db = SQLAlchemy(app)
 
 
